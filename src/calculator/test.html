@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -26,113 +27,129 @@
     <!-- запустить тесты! -->
     <script src="calc.js"></script>
 </head>
+
 <body>
-<div id="mocha"></div>
+    <div id="mocha"></div>
 
-<script>
+    <script>
+        //createValue()
+        describe('createValue', function() {
+            it('give number = 2, value = "4" , flag = false', function() {
+                assert.deepEqual(createValue(2, '4', false), ['42', false]);
+            });
+            it('give number = 7, value = "1" , flag = false', function() {
+                assert.deepEqual(createValue(7, '1', false), ['17', false]);
+            });
+            it('give number = 2, value = "7" , flag = false', function() {
+                assert.deepEqual(createValue(2, '7', true), ['2', false]);
+            });
+            it('give number = 9, value = "0" , flag = false', function() {
+                assert.deepEqual(createValue(9, '0', false), ['9', false]);
+            });
+            it('give number = 2, value = "4" , flag = false', function() {
+                assert.deepEqual(createValue(2, '4', false), ['42', false]);
+            });
+        });
 
-    //createValue()
-    describe('createValue', function () {
-        it('give number = 2, value = "4" , flag = false', function () {
-            assert.deepEqual(createValue(2,'4',false),['42',false]);
+        //sum()
+        describe('Sum', function() {
+            it('give value1 = 2, value2 = "4"', function() {
+                assert.equal(sum(2, '4'), 6);
+            });
+            it('give value1 = 62, value2 = "11"', function() {
+                assert.equal(sum(62, '11'), 73);
+            });
+            it('give value1 = 12, value2 = "72"', function() {
+                assert.equal(sum(12, '72'), 84);
+            });
+            it('give value1 = 97, value2 = "0"', function() {
+                assert.equal(sum(97, '0'), 97);
+            });
+            it('give value1 = 0, value2 = "0"', function() {
+                assert.equal(sum(0, '0'), 0);
+            });
         });
-        it('give number = 7, value = "1" , flag = false', function () {
-            assert.deepEqual(createValue(7,'1',false),['17',false]);
-        });
-        it('give number = 2, value = "7" , flag = false', function () {
-            assert.deepEqual(createValue(2,'7',true),['2',false]);
-        });
-        it('give number = 9, value = "0" , flag = false', function () {
-            assert.deepEqual(createValue(9,'0',false),['9',false]);
-        });
-        it('give number = 2, value = "4" , flag = false', function () {
-            assert.deepEqual(createValue(2,'4',false),['42',false]);
-        });
-    });
 
-    //sum()
-    describe('Sum', function () {
-        it('give value1 = 2, value2 = "4"', function () {
-            assert.equal(sum(2,'4'),6);
+        //min()
+        describe('min', function() {
+            it('give value1 = 2, value2 = "7"', function() {
+                assert.equal(min(2, '7'), -5);
+            });
+            it('give value1 = 77, value2 = "13"', function() {
+                assert.equal(min(77, '13'), 64);
+            });
+            it('give value1 = -12, value2 = "-72"', function() {
+                assert.equal(min(-12, '-72'), 60);
+            });
+            it('give value1 = 97, value2 = "0"', function() {
+                assert.equal(min(97, '0'), 97);
+            });
+            it('give value1 = 0, value2 = "0"', function() {
+                assert.equal(min(0, '0'), 0);
+            });
         });
-        it('give value1 = 62, value2 = "11"', function () {
-            assert.equal(sum(62,'11'),73);
-        });
-        it('give value1 = 12, value2 = "72"', function () {
-            assert.equal(sum(12,'72'),84);
-        });
-        it('give value1 = 97, value2 = "0"', function () {
-            assert.equal(sum(97,'0'),97);
-        });
-        it('give value1 = 0, value2 = "0"', function () {
-            assert.equal(sum(0,'0'), 0);
-        });
-    });
-
-    //min()
-    describe('min', function () {
-        it('give value1 = 2, value2 = "7"', function () {
-            assert.equal(min(2,'7'),-5);
-        });
-        it('give value1 = 77, value2 = "13"', function () {
-            assert.equal(min(77,'13'),64);
-        });
-        it('give value1 = -12, value2 = "-72"', function () {
-            assert.equal(min(-12,'-72'),60);
-        });
-        it('give value1 = 97, value2 = "0"', function () {
-            assert.equal(min(97,'0'),97);
-        });
-        it('give value1 = 0, value2 = "0"', function () {
-            assert.equal(min(0,'0'), 0);
-        });
-    });
-
-
-    //mul()
-    describe('mul', function () {
-        it('give value1 = 7, value2 = "2"', function () {
-            assert.equal(mul(7,'2'),14);
-        });
-        it('give value1 = 52, value2 = "12"', function () {
-            assert.equal(mul(52,'12'),624);
-        });
-        it('give value1 = 1, value2 = "7"', function () {
-            assert.equal(mul(1,'7'),7);
-        });
-        it('give value1 = -2, value2 = "-8"', function () {
-            assert.equal(mul(-2,'-8'),16);
-        });
-        it('give value1 = 0, value2 = "0"', function () {
-            assert.equal(mul(0,'0'), 0);
-        });
-    });
-
-    //sum()
-    describe('division', function () {
-        it('give value1 = 2, value2 = "4"', function () {
-            assert.equal(division(2,'4'),0.5);
-        });
-        it('give value1 = 40, value2 = "10"', function () {
-            assert.equal(division(40,'10'),4);
-        });
-        it('give value1 = 5, value2 = "5"', function () {
-            assert.equal(division(5,'5'),1);
-        });
-        it('give value1 = 97, value2 = "0"', function () {
-            assert.equal(division(97,'0'),Infinity);
-        });
-        it('give value1 = 0, value2 = "0"', function () {
-            assert.deepEqual(division(0,'0'), NaN);
-        });
-    });
 
 
+        //mul()
+        describe('mul', function() {
+            it('give value1 = 7, value2 = "2"', function() {
+                assert.equal(mul(7, '2'), 14);
+            });
+            it('give value1 = 52, value2 = "12"', function() {
+                assert.equal(mul(52, '12'), 624);
+            });
+            it('give value1 = 1, value2 = "7"', function() {
+                assert.equal(mul(1, '7'), 7);
+            });
+            it('give value1 = -2, value2 = "-8"', function() {
+                assert.equal(mul(-2, '-8'), 16);
+            });
+            it('give value1 = 0, value2 = "0"', function() {
+                assert.equal(mul(0, '0'), 0);
+            });
+        });
 
-</script>
+        //sum()
+        describe('division', function() {
+            it('give value1 = 2, value2 = "4"', function() {
+                assert.equal(division(2, '4'), 0.5);
+            });
+            it('give value1 = 40, value2 = "10"', function() {
+                assert.equal(division(40, '10'), 4);
+            });
+            it('give value1 = 5, value2 = "5"', function() {
+                assert.equal(division(5, '5'), 1);
+            });
+            it('give value1 = 97, value2 = "0"', function() {
+                assert.equal(division(97, '0'), Infinity);
+            });
+            it('give value1 = 0, value2 = "0"', function() {
+                assert.deepEqual(division(0, '0'), NaN);
+            });
+        });
 
-<script>
-    mocha.run();
-</script>
+        describe('checkDecimal', function() {
+            it('value = "2", flag = false', function() {
+                assert.deepEqual(checkDecimal("2", false), ["2.", false]);
+            });
+            it('value = "23.", flag = false', function() {
+                assert.deepEqual(checkDecimal("23.", false), ["23.", false]);
+            });
+            it('value = "0", flag = false', function() {
+                assert.deepEqual(checkDecimal("0", false), ["0.", false]);
+            });
+            it('value = "-6", flag = false', function() {
+                assert.deepEqual(checkDecimal("-6", false), ["-6.", false]);
+            });
+            it('value = "2.", flag = true', function() {
+                assert.deepEqual(checkDecimal("2.", true), ["0", false]);
+            });
+        });
+    </script>
+
+    <script>
+        mocha.run();
+    </script>
 </body>
+
 </html>
