@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="ifElse/task1.js"></script>
+    <script src="ifElse/task2.js"></script>
+    <script src="ifElse/task3.js"></script>
+    <script src="ifElse/task4.js"></script>
+    <script src="ifElse/task5.js"></script>
+    <script src="loops/task1.js"></script>
+    <script src="loops/task2.js"></script>
+    <script src="loops/task3.js"></script>
+    <script src="loops/task4.js"></script>
+    <script src="loops/task5.js"></script>
+    <script src="loops/task6.js"></script>
+    <script src="arrays/task1.js"></script>
+    <script src="arrays/task2.js"></script>
+    <script src="arrays/task3.js"></script>
+    <script src="arrays/task4.js"></script>
+    <script src="arrays/task5.js"></script>
+    <script src="arrays/task6.js"></script>
+    <script src="arrays/task7.js"></script>
+    <script src="arrays/task8.js"></script>
+    <script src="arrays/task9.1.js"></script>
+    <script src="arrays/task9.2.js"></script>
+    <script src="arrays/task9.3.js"></script>
+    <script src="functions/task1.js"></script>
+    <script src="functions/task2.js"></script>
+    <script src="functions/task3.js"></script>
+    <script src="functions/task4.js"></script>
+
+    <script src=""></script>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+
+    <!-- запустить тесты! -->
+</head>
+<body>
+<div id="mocha"></div>
+/////////////////////////////////////////////////////////////////////
+///////////////////////////////IFELSE
+<script>
+    //task1
+    describe('getSumOrMul', function () {
+        it('give a = 6, b = 10 ', function () {
+            assert.equal(getSumOrMul(6, 10),60);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(5, 10),15);
+        });
+        it('give a = -2, b = -3 ', function () {
+            assert.equal(getSumOrMul(-2, -3),6);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(62, 12),744);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(0, 0),0);
+        });
+    });
+    //task2
+    describe('getQuarter', function () {
+        it('give x = 5, y = 12 ', function () {
+            assert.equal(getQuarter(5, 12),1);
+        });
+        it('give x = -5, y = 12 ', function () {
+            assert.equal(getQuarter(-5, 12),2);
+        });
+        it('give x = -5, y = -12 ', function () {
+            assert.equal(getQuarter(-5, -12),3);
+        });
+        it('give x = 5, y = -12 ', function () {
+            assert.equal(getQuarter(5, -12),4);
+        });
+        it('give x = 0, y = 0 ', function () {
+            assert.equal(getQuarter(0, 0), console.log("Начало координат"));
+        });
+        it('give x = 8, y = 0 ', function () {
+            assert.equal(getQuarter(8, 0), console.log("На оси X"));
+        });
+        it('give x = 0, y = 5 ', function () {
+            assert.equal(getQuarter(0, 5), console.log("На оси y"));
+        });
+    });
+    //task3
+    describe('getSumPosNum', function () {
+        it('give a = 6, b = 10, c = -6', function () {
+            assert.equal(getSumPosNum(6, 10, -6),16);
+        });
+        it('give a = 5, b = 4, c = -2', function () {
+            assert.equal(getSumPosNum(5, 4, -2),9);
+        });
+        it('give a = 12, b = -8, c = -6', function () {
+            assert.equal(getSumPosNum(12, -8, -6),12);
+        });
+        it('give a = 7, b = 2, c = 1', function () {
+            assert.equal(getSumPosNum(7, 2, 1),10);
+        });
+        it('give a = 0, b = 0, c = 0', function () {
+            assert.equal(getSumPosNum(0, 0, 0),0);
+        });
+    });
+
+    //task4
+    describe('sumMulMax', function () {
+        it('give a = 2, b = 5, c = 3 ', function () {
+            assert.equal(sumMulMax(2,5,3),33);
+        });
+        it('give a = 2, b = 2, c = 2 ', function () {
+            assert.equal(sumMulMax(2,2,2),11);
+        });
+        it('give a = -7, b = -2, c = -3 ', function () {
+            assert.equal(sumMulMax(-7,-2,-3),-9);
+        });
+        it('give a = -5, b = 10, c = 4 ', function () {
+            assert.equal(sumMulMax(-5, 10, 4),12);
+        });
+        it('give a = 1, b = 2, c = 3 ', function () {
+            assert.equal(sumMulMax(1, 2, 3),console.log("Сумма равна произведению"));
+        });
+    });
+
+    //task5
+    describe('getRating', function () {
+        it('give rating = 12', function () {
+            assert.equal(getRating(12),'F');
+        });
+        it('give rating = 33', function () {
+            assert.equal(getRating(33),'E');
+        });
+        it('give rating = 41', function () {
+            assert.equal(getRating(41),'D');
+        });
+        it('give rating = 69', function () {
+            assert.equal(getRating(69),'C');
+        });
+        it('give rating = 75', function () {
+            assert.equal(getRating(75),'B');
+        });
+        it('give rating = 92', function () {
+            assert.equal(getRating(92),'A');
+        });
+        it('give rating = 173', function () {
+            assert.equal(getRating(173),console.log("Рейтинговый балл введен неправильно"));
+        });
+    });
+
+
+</script>
+/////////////////////////////////////////////////////////////////////
+///////////////////////////////LOOPS
+<script>
+
+    //task1
+
+    describe('sumNum', function () {
+        it('check result sum', function () {
+            assert.deepEqual(sumNum(),[2450,50]);
+        });
+    });
+
+    //task2
+    describe('primeNum', function () {
+        it('give num = 4', function () {
+            assert.equal(primeNum(4),false);
+        });
+        it('give num = 12', function () {
+            assert.equal(primeNum(12),false);
+        });
+        it('give num = 110', function () {
+            assert.equal(primeNum(110),false);
+        });
+        it('give num = -3', function () {
+            assert.equal(primeNum(-3),true);
+        });
+        it('give num = 0', function () {
+            assert.equal(primeNum(7),true);
+        });
+    });
+
+    //task3
+
+    describe('getSqrt', function () {
+        it('give num = 10', function () {
+            assert.equal(getSqrt(10 ), 3);
+        });
+        it('give num = 18', function () {
+            assert.equal(getSqrt(18 ), 4);
+        });
+        it('give num = 124', function () {
+            assert.equal(getSqrt(124 ), 11);
+        });
+        it('give num = -16', function () {
+            assert.equal(getSqrt(-16 ), 0);
+        });
+        it('give num = 0', function () {
+            assert.equal(getSqrt(0 ), 0);
+        });
+    });
+
+    //task4
+
+    describe('getFactorial', function () {
+        it('give num = 5', function () {
+            assert.equal(getFactorial(5), 120);
+        });
+        it('give num = 7', function () {
+            assert.equal(getFactorial(7), 5040);
+        });
+        it('give num = 1', function () {
+            assert.equal(getFactorial(1), 1);
+        });
+        it('give num = -8', function () {
+            assert.equal(getFactorial(-8), 0);
+        });
+        it('give num = 0', function () {
+            assert.equal(getFactorial(0), 1);
+        });
+    });
+
+    //task5
+
+    describe('SumOfNumbers', function () {
+        it('give num = 186', function () {
+            assert.equal(sumOfNumbers(186), 15);
+        });
+        it('give num = 8542', function () {
+            assert.equal(sumOfNumbers(8542), 19);
+        });
+        it('give num = 42', function () {
+            assert.equal(sumOfNumbers(42), 6);
+        });
+        it('give num = -127', function () {
+            assert.equal(sumOfNumbers(-127), -10);
+        });
+        it('give num = 0', function () {
+            assert.equal(sumOfNumbers(0), 0);
+        });
+    });
+
+    //task6
+
+    describe('getReverseNum', function () {
+        it('give num = 524', function () {
+            assert.equal(getReverseNum(524),425);
+        });
+        it('give num = 852', function () {
+            assert.equal(getReverseNum(852),258);
+        });
+        it('give num = 253', function () {
+            assert.equal(getReverseNum(999),999);
+        });
+        it('give num = 524', function () {
+            assert.equal(getReverseNum(0),0);
+        });
+        it('give num = 225', function () {
+            assert.equal(getReverseNum(225),522);
+        });
+    });
+
+</script>
+/////////////////////////////////////////////////////////////////////
+///////////////////////////////ARRAYS
+<script>
+    //task1
+    describe('minElem', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(minElem([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),6);
+        });
+        it('[-2, -2, -6, 12, -220, 53, 125, 23, 12, 74]', function () {
+            assert.equal(minElem([-2, -2, -6, 12, -220, 53, 125, 23, 12, 74]),-220);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(minElem([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('[12, 12, 12, 12, 12, 12, 12, 12, 12, 12]', function () {
+            assert.equal(minElem([12, 12, 12, 12, 12, 12, 12, 12, 12, 12]),12);
+        });
+        it('[624, 175,21, 123, 21, 85, 5, 2, 9, 77]', function () {
+            assert.equal(minElem([624, 175,21, 123, 21, 85, 5, 2, 9, 77]),2);
+        });
+    });
+
+    //task2
+    describe('maxElem', function () {
+        it('give array = [64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(maxElem([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),97);
+        });
+        it('give array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(maxElem([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('give array = [-64, -75, -21, -6, -59, -97, -17, -33, -12, -42]', function () {
+            assert.equal(maxElem([-64, -75, -21, -6, -59, -97, -17, -33, -12, -42]),-6);
+        });
+        it('give array = [21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.equal(maxElem([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),91);
+        });
+
+    });
+
+    //task3
+    describe('minInd', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(minInd([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),3);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(minInd([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.equal(minInd([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),9);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.equal(minInd([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),9);
+        });
+    });
+
+    //task4
+    describe('maxInd', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(maxInd([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),5);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(maxInd([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.equal(maxInd([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),5);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.equal(maxInd([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),5);
+        });
+    });
+    //task5
+    describe('sumElemOdd', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(sumElemOdd([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),253);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(sumElemOdd([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.equal(sumElemOdd([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),286);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.equal(sumElemOdd([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),142);
+        });
+    });
+    //task6
+    describe('reverseArray', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.deepEqual(reverseArray([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),[42, 12, 33, 17, 97, 59, 6, 21, 75, 64]);
+        });
+
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 20]', function () {
+            assert.deepEqual(reverseArray([21, 74, 21, 79, 64, 91, 28, 42, 19, 20]),[20, 19, 42, 28, 91, 64, 79, 21, 74, 21]);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.deepEqual(reverseArray([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),[4, 52, 13, 75, 87, 69, 23, 41, 15, 52]);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.deepEqual(reverseArray([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        });
+    });
+    //task7
+    describe('sumOddElements', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.equal(sumOddElements([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),6);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.equal(sumOddElements([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),0);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.equal(sumOddElements([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),5);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.equal(sumOddElements([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),7);
+        });
+    });
+
+    //task8
+    describe('reverseHalf', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.deepEqual(reverseHalf([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),[ 97, 17, 33, 12, 42, 64, 75, 21, 6, 59]);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.deepEqual(reverseHalf([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.deepEqual(reverseHalf([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),[ 91, 28, 42, 19, 0, 21, 74, 21, 79, 64]);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.deepEqual(reverseHalf([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),[ 87, 75, 13, 52, 4, 52, 15, 41, 23, 69]);
+        });
+    });
+
+    //task9.1
+    describe('bubbleSort', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.deepEqual(bubbleSort([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),[ 6, 12, 17, 21, 33, 42, 59, 64, 75, 97]);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.deepEqual(bubbleSort([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.deepEqual(bubbleSort([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),[ 0, 19, 21, 21, 28, 42, 64, 74, 79, 91]);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.deepEqual(bubbleSort([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),[ 4, 13, 15, 23, 41, 52, 52, 69, 75, 87]);
+        });
+    });
+
+    //task9.2
+    describe('selectSort', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.deepEqual(selectSort([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),[ 6, 12, 17, 21, 33, 42, 59, 64, 75, 97]);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.deepEqual(selectSort([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.deepEqual(selectSort([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),[ 0, 19, 21, 21, 28, 42, 64, 74, 79, 91]);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.deepEqual(selectSort([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),[ 4, 13, 15, 23, 41, 52, 52, 69, 75, 87]);
+        });
+    });
+
+    //task9.3
+    describe('insertSort', function () {
+        it('[64, 75, 21, 6, 59, 97, 17, 33, 12, 42]', function () {
+            assert.deepEqual(insertSort([64, 75, 21, 6, 59, 97, 17, 33, 12, 42]),[ 6, 12, 17, 21, 33, 42, 59, 64, 75, 97]);
+        });
+        it('[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', function () {
+            assert.deepEqual(insertSort([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        });
+        it('[21, 74, 21, 79 64, 91, 28, 42, 19, 0]', function () {
+            assert.deepEqual(insertSort([21, 74, 21, 79, 64, 91, 28, 42, 19, 0]),[ 0, 19, 21, 21, 28, 42, 64, 74, 79, 91]);
+        });
+        it('[52, 15, 41, 23, 69, 87, 75, 13, 52, 4]', function () {
+            assert.deepEqual(insertSort([52, 15, 41, 23, 69, 87, 75, 13, 52, 4]),[ 4, 13, 15, 23, 41, 52, 52, 69, 75, 87]);
+        });
+    });
+
+</script>
+
+/////////////////////////////////////////////////////////////////////
+///////////////////////////////FUNCTIONS
+<script>
+    //task1
+    describe('dayOfTheWeek', function () {
+        it('give num = 4, get day of the week', function () {
+            assert.equal(dayOfTheWeek(4),"Четверг");
+        });
+        it('give num = 7, get day of the week', function () {
+            assert.equal(dayOfTheWeek(7),"Воскресенье");
+        });
+        it('give num = 9, get day of the week', function () {
+            assert.equal(dayOfTheWeek(9),undefined);
+        });
+        it('give num = 1, get day of the week', function () {
+            assert.equal(dayOfTheWeek(1),"Понедельник");
+        });
+        it('give num = 5, get day of the week', function () {
+            assert.equal(dayOfTheWeek(5),"Пятница");
+        });
+    });
+    //task2
+    describe('getString', function () {
+        it('give num =  742', function () {
+            assert.deepEqual(getString(742),"Семьсот  сорок  два");
+        });
+        it('give num =  110', function () {
+            assert.deepEqual(getString(110),"Сто  десять");
+        });
+        it('give num =  21', function () {
+            assert.deepEqual(getString(21),"двадцать  один");
+        });
+        it('give num =  333', function () {
+            assert.deepEqual(getString(333),"Триста  тридцать  три");
+        });
+        it('give num =  221', function () {
+            assert.deepEqual(getString(221),"Двести  двадцать  один");
+        });
+    });
+    //task3
+    describe('getNum', function () {
+        it('give num =  триста семнадцать', function () {
+            assert.equal(getNum("триста семнадцать"),317);
+        });
+        it('give num =  сто тридцать два', function () {
+            assert.equal(getNum("сто тридцать два"),132);
+        });
+        it('give num =  триста тридцать три', function () {
+            assert.equal(getNum("триста тридцать три"),333);
+        });
+        it('give num =  ноль', function () {
+            assert.equal(getNum("ноль"),0);
+        });
+        it('give num =  семьсот семь', function () {
+            assert.equal(getNum("семьсот семь"),707);
+        });
+    });
+    //task4
+    describe('distance', function () {
+        it('give x1 = 0, y1 = 0, x2 = 1, y2 = 1, get distance', function () {
+            assert.equal(distance(0,0,1,1),1.41);
+        });
+        it('give x1 = 0, y1 = 0, x2 = -1, y2 = -1, get distance', function () {
+            assert.equal(distance(0,0,-1,-1),1.41);
+        });
+        it('give x1 = 0, y1 = 0, x2 = 0, y2 = 0, get distance', function () {
+            assert.equal(distance(0,0,0,0),0);
+        });
+        it('give x1 = 1, y1 = 1, x2 = 1, y2 = 2, get distance', function () {
+            assert.equal(distance(1,1,1,2),1);
+        });
+        it('give x1 = 1, y1 = 1, x2 = 10, y2 = 1, get distance', function () {
+            assert.equal(distance(1,1,10,1),9   );
+        });
+
+    });
+
+</script>
+
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
