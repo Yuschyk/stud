@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"></script>
+    <script src="task4.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+
+    <!-- запустить тесты! -->
+
+    <title>Test</title>
+</head>
+<body>
+<div id="mocha"></div>
+<script>
+    //task1
+    describe('dayOfTheWeek', function () {
+        it('give num = 4, get day of the week', function () {
+            assert.equal(dayOfTheWeek(4),"Четверг");
+        });
+        it('give num = 7, get day of the week', function () {
+            assert.equal(dayOfTheWeek(7),"Воскресенье");
+        });
+        it('give num = 9, get day of the week', function () {
+            assert.equal(dayOfTheWeek(9),undefined);
+        });
+        it('give num = 1, get day of the week', function () {
+            assert.equal(dayOfTheWeek(1),"Понедельник");
+        });
+        it('give num = 5, get day of the week', function () {
+            assert.equal(dayOfTheWeek(5),"Пятница");
+        });
+    });
+    //task2
+    describe('getString', function () {
+        it('give num =  742', function () {
+            assert.deepEqual(getString(742),"Семьсот  сорок  два");
+        });
+        it('give num =  110', function () {
+            assert.deepEqual(getString(110),"Сто  десять");
+        });
+        it('give num =  21', function () {
+            assert.deepEqual(getString(21),"двадцать  один");
+        });
+        it('give num =  333', function () {
+            assert.deepEqual(getString(333),"Триста  тридцать  три");
+        });
+        it('give num =  221', function () {
+            assert.deepEqual(getString(221),"Двести  двадцать  один");
+        });
+    });
+//task3
+    describe('getNum', function () {
+        it('give num =  триста семнадцать', function () {
+            assert.equal(getNum("триста семнадцать"),317);
+        });
+        it('give num =  сто тридцать два', function () {
+            assert.equal(getNum("сто тридцать два"),132);
+        });
+        it('give num =  триста тридцать три', function () {
+            assert.equal(getNum("триста тридцать три"),333);
+        });
+        it('give num =  ноль', function () {
+            assert.equal(getNum("ноль"),0);
+        });
+        it('give num =  семьсот семь', function () {
+            assert.equal(getNum("семьсот семь"),707);
+        });
+    });
+//task4
+    describe('distance', function () {
+        it('give x1 = 0, y1 = 0, x2 = 1, y2 = 1, get distance', function () {
+            assert.equal(distance(0,0,1,1),1.41);
+        });
+        it('give x1 = 0, y1 = 0, x2 = -1, y2 = -1, get distance', function () {
+            assert.equal(distance(0,0,-1,-1),1.41);
+        });
+        it('give x1 = 0, y1 = 0, x2 = 0, y2 = 0, get distance', function () {
+            assert.equal(distance(0,0,0,0),0);
+        });
+        it('give x1 = 1, y1 = 1, x2 = 1, y2 = 2, get distance', function () {
+            assert.equal(distance(1,1,1,2),1);
+        });
+        it('give x1 = 1, y1 = 1, x2 = 10, y2 = 1, get distance', function () {
+            assert.equal(distance(1,1,10,1),9   );
+        });
+
+    });
+
+</script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>

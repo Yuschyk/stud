@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="task1.js "></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"  ></script>
+    <script src="task4.js"  ></script>
+    <script src="task5.js"  ></script>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+
+    <!-- запустить тесты! -->
+</head>
+<body>
+<div id="mocha"></div>
+
+<script>
+    //task1
+    describe('getSumOrMul', function () {
+        it('give a = 6, b = 10 ', function () {
+            assert.equal(getSumOrMul(6, 10),60);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(5, 10),15);
+        });
+        it('give a = -2, b = -3 ', function () {
+            assert.equal(getSumOrMul(-2, -3),6);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(62, 12),744);
+        });
+        it('give a = 5, b = 10 ', function () {
+            assert.equal(getSumOrMul(0, 0),0);
+        });
+    });
+    //task2
+    describe('getQuarter', function () {
+        it('give x = 5, y = 12 ', function () {
+                assert.equal(getQuarter(5, 12),1);
+        });
+        it('give x = -5, y = 12 ', function () {
+            assert.equal(getQuarter(-5, 12),2);
+        });
+        it('give x = -5, y = -12 ', function () {
+            assert.equal(getQuarter(-5, -12),3);
+        });
+        it('give x = 5, y = -12 ', function () {
+            assert.equal(getQuarter(5, -12),4);
+        });
+        it('give x = 0, y = 0 ', function () {
+            assert.equal(getQuarter(0, 0), console.log("Начало координат"));
+        });
+        it('give x = 8, y = 0 ', function () {
+            assert.equal(getQuarter(8, 0), console.log("На оси X"));
+        });
+        it('give x = 0, y = 5 ', function () {
+            assert.equal(getQuarter(0, 5), console.log("На оси y"));
+        });
+    });
+    //task3
+    describe('getSumPosNum', function () {
+        it('give a = 6, b = 10, c = -6', function () {
+            assert.equal(getSumPosNum(6, 10, -6),16);
+        });
+        it('give a = 5, b = 4, c = -2', function () {
+            assert.equal(getSumPosNum(5, 4, -2),9);
+        });
+        it('give a = 12, b = -8, c = -6', function () {
+            assert.equal(getSumPosNum(12, -8, -6),12);
+        });
+        it('give a = 7, b = 2, c = 1', function () {
+            assert.equal(getSumPosNum(7, 2, 1),10);
+        });
+        it('give a = 0, b = 0, c = 0', function () {
+            assert.equal(getSumPosNum(0, 0, 0),0);
+        });
+    });
+
+    //task4
+    describe('sumMulMax', function () {
+        it('give a = 2, b = 5, c = 3 ', function () {
+            assert.equal(sumMulMax(2,5,3),33);
+        });
+        it('give a = 2, b = 2, c = 2 ', function () {
+            assert.equal(sumMulMax(2,2,2),11);
+        });
+        it('give a = -7, b = -2, c = -3 ', function () {
+            assert.equal(sumMulMax(-7,-2,-3),-9);
+        });
+        it('give a = -5, b = 10, c = 4 ', function () {
+            assert.equal(sumMulMax(-5, 10, 4),12);
+        });
+        it('give a = 1, b = 2, c = 3 ', function () {
+            assert.equal(sumMulMax(1, 2, 3),console.log("Сумма равна произведению"));
+        });
+    });
+
+    //task5
+    describe('getRating', function () {
+        it('give rating = 12', function () {
+            assert.equal(getRating(12),'F');
+        });
+        it('give rating = 33', function () {
+            assert.equal(getRating(33),'E');
+        });
+        it('give rating = 41', function () {
+            assert.equal(getRating(41),'D');
+        });
+        it('give rating = 69', function () {
+            assert.equal(getRating(69),'C');
+        });
+        it('give rating = 75', function () {
+            assert.equal(getRating(75),'B');
+        });
+        it('give rating = 92', function () {
+            assert.equal(getRating(92),'A');
+        });
+        it('give rating = 173', function () {
+            assert.equal(getRating(173),console.log("Рейтинговый балл введен неправильно"));
+        });
+    });
+
+
+</script>
+
+<script>
+    mocha.run();
+</script>
+</body>
+</html>    

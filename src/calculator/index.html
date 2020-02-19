@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+    <div class="calc" id="calc">
+        <form class="out" id="out">
+            <input type="text" class="calc-input" id="display" readonly value="0">
+        </form>
+        <div class="calc__menu">
+            <div class="calc__row">
+                <button type="button" class="clear_btn btn dark-grey" id="AC" >AC</button>
+                <button type="button" class="btn dark-grey">+/-</button>
+                <button type="button" class="btn dark-grey">%</button>
+                <button type="button" class="operation  btn orange">/</button>
+            </div>
+            <div class="calc__row">
+                <button type="button" class="number btn grey">7</button>
+                <button type="button" class="number btn grey">8</button>
+                <button type="button" class="number btn grey">9</button>
+                <button type="button" class="operation  btn orange">*</button>
+            </div>
+            <div class="calc__row">
+                <button type="button" class="number btn grey">4</button>
+                <button type="button" class="number btn grey">5</button>
+                <button type="button" class="number btn grey">6</button>
+                <button type="button" class="operation  btn orange">-</button>
+            </div>
+            <div class="calc__row">
+                <button type="button" class="number btn grey">1</button>
+                <button type="button" class="number  btn grey">2</button>
+                <button type="button" class="number  btn grey">3</button>
+                <button type="button" class="operation  btn orange">+</button>
+            </div>
+            <div class="calc__row">
+                <button type="button" class="number btn big_button grey">0</button>
+                <button type="button " class=" btn grey " id="decimal">.</button>
+                <button type="button" class="operation btn orange" id="result">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"></script>
+    <script src="task4.js"></script>
+    <script src="task5.js"></script>
+    <script src="task6.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+
+    <!-- запустить тесты! -->
+</head>
+<body>
+<div id="mocha"></div>
+
+<script>
+
+//task1
+
+describe('sumNum', function () {
+    it('check result sum', function () {
+    assert.deepEqual(sumNum(),[2450,50]);
+    });
+});
+
+//task2
+describe('primeNum', function () {
+    it('give num = 4', function () {
+        assert.equal(primeNum(4),false);
+    });
+    it('give num = 12', function () {
+        assert.equal(primeNum(12),false);
+    });
+    it('give num = 110', function () {
+        assert.equal(primeNum(110),false);
+    });
+    it('give num = -3', function () {
+        assert.equal(primeNum(-3),true);
+    });
+    it('give num = 0', function () {
+        assert.equal(primeNum(7),true);
+    });
+});
+
+//task3
+
+describe('getSqrt', function () {
+    it('give num = 10', function () {
+        assert.equal(getSqrt(10 ), 3);
+    });
+    it('give num = 18', function () {
+        assert.equal(getSqrt(18 ), 4);
+    });
+    it('give num = 124', function () {
+        assert.equal(getSqrt(124 ), 11);
+    });
+    it('give num = -16', function () {
+        assert.equal(getSqrt(-16 ), 0);
+    });
+    it('give num = 0', function () {
+        assert.equal(getSqrt(0 ), 0);
+    });
+});
+
+//task4
+
+describe('getFactorial', function () {
+    it('give num = 5', function () {
+        assert.equal(getFactorial(5), 120);
+    });
+    it('give num = 7', function () {
+        assert.equal(getFactorial(7), 5040);
+    });
+    it('give num = 1', function () {
+        assert.equal(getFactorial(1), 1);
+    });
+    it('give num = -8', function () {
+        assert.equal(getFactorial(-8), 0);
+    });
+    it('give num = 0', function () {
+        assert.equal(getFactorial(0), 1);
+    });
+});
+
+//task5
+
+describe('SumOfNumbers', function () {
+    it('give num = 186', function () {
+        assert.equal(sumOfNumbers(186), 15);
+    });
+    it('give num = 8542', function () {
+        assert.equal(sumOfNumbers(8542), 19);
+    });
+    it('give num = 42', function () {
+        assert.equal(sumOfNumbers(42), 6);
+    });
+    it('give num = -127', function () {
+        assert.equal(sumOfNumbers(-127), -10);
+    });
+    it('give num = 0', function () {
+        assert.equal(sumOfNumbers(0), 0);
+    });
+});
+
+//task6
+
+describe('getReverseNum', function () {
+    it('give num = 524', function () {
+        assert.equal(getReverseNum(524),425);
+    });
+    it('give num = 852', function () {
+        assert.equal(getReverseNum(852),258);
+    });
+    it('give num = 253', function () {
+        assert.equal(getReverseNum(999),999);
+    });
+    it('give num = 524', function () {
+        assert.equal(getReverseNum(0),0);
+    });
+    it('give num = 225', function () {
+        assert.equal(getReverseNum(225),522);
+    });
+});
+
+</script>
+
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
