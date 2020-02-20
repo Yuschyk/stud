@@ -49,6 +49,7 @@
             it('give number = 2, value = "4" , flag = false', function() {
                 assert.deepEqual(createValue(2, '4', false), ['42', false]);
             });
+
         });
 
         //sum()
@@ -68,6 +69,12 @@
             it('give value1 = 0, value2 = "0"', function() {
                 assert.equal(sum(0, '0'), 0);
             });
+            it('give value1 = 2.5, value2 = "11.7"', function() {
+                assert.equal(sum(2.5, '11.7'), 14.2);
+            });
+            it('give value1 = 0.4, value2 = "7.1"', function() {
+                assert.equal(sum(0.4, '7.1'), 7.5);
+            });
         });
 
         //min()
@@ -86,6 +93,12 @@
             });
             it('give value1 = 0, value2 = "0"', function() {
                 assert.equal(min(0, '0'), 0);
+            });
+            it('give value1 = 12.7, value2 = "12.7"', function() {
+                assert.equal(min(12.7, '12.7'), 0);
+            });
+            it('give value1 = 42.7, value2 = "7.4"', function() {
+                assert.equal(min(42.7, '7.6'), 35.1);
             });
         });
 
@@ -107,9 +120,15 @@
             it('give value1 = 0, value2 = "0"', function() {
                 assert.equal(mul(0, '0'), 0);
             });
+            it('give value1 = 2.5 value2 = "3.5"', function() {
+                assert.equal(mul(2.5, '3.5'), 8.75);
+            });
+            it('give value1 = 1.1, value2 = "14.5"', function() {
+                assert.equal(mul(42.7, '7.6'), 324.52);
+            });
         });
 
-        //sum()
+        //division()
         describe('division', function() {
             it('give value1 = 2, value2 = "4"', function() {
                 assert.equal(division(2, '4'), 0.5);
@@ -125,6 +144,12 @@
             });
             it('give value1 = 0, value2 = "0"', function() {
                 assert.deepEqual(division(0, '0'), NaN);
+            });
+            it('give value1 = 75.6, value2 = "25.2"', function() {
+                assert.equal(division(75.6, '25.2'), 3);
+            });
+            it('give value1 = 6.6, value2 = "3.3"', function() {
+                assert.deepEqual(division(6.6, '3.3'), 2);
             });
         });
 

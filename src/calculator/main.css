@@ -80,6 +80,10 @@ button {
     padding-left: 27px;
 }
 
+.biggest_button{
+    width: 197px;
+}
+
 .orange:active{
     background-color: #fd7624;
 }
