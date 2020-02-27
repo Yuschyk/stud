@@ -10,7 +10,7 @@ let memoryPendingOperation = "";
 
 for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
-    number.addEventListener('click', function (e) {
+    number.addEventListener('click', function(e) {
         numberPress(e.target.textContent);
     });
 
@@ -18,7 +18,7 @@ for (let i = 0; i < numbers.length; i++) {
 
 for (let i = 0; i < operations.length; i++) {
     let operationBtn = operations[i];
-    operationBtn.addEventListener('click', function (e) {
+    operationBtn.addEventListener('click', function(e) {
         operation(e.target.textContent);
     });
 }
@@ -67,9 +67,9 @@ function operation(operand) {
             memoryCurrentNumber = mul(memoryCurrentNumber, memoryLocalOperation);
         } else if (memoryPendingOperation === "/") {
             memoryCurrentNumber = division(memoryCurrentNumber, memoryLocalOperation);
-         } else {
-             memoryCurrentNumber = parseFloat(memoryLocalOperation);
-         }
+        } else {
+            memoryCurrentNumber = parseFloat(memoryLocalOperation);
+        }
 
         display.value = memoryCurrentNumber;
         memoryPendingOperation = operand;
@@ -106,12 +106,12 @@ function clear() {
 
 function decimal() {
     let localDecimalMemory = display.value;
-    const result = checkDecimal(localDecimalMemory,memoryNewNumber);
+    const result = checkDecimal(localDecimalMemory, memoryNewNumber);
     display.value = result[0];
     memoryNewNumber = result[1];
 }
 
-function checkDecimal(value,flag) {
+function checkDecimal(value, flag) {
 
     if (flag) {
         value = "0";
@@ -122,5 +122,5 @@ function checkDecimal(value,flag) {
         }
     }
 
-    return [value,flag];
+    return [value, flag];
 }
