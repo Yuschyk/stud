@@ -4,10 +4,14 @@
     margin: 0;
     box-sizing: border-box;
     outline: none;
+    font-size: 26px;
 }
 
 body{
-
+    font-size: 26px;
+}
+div{
+    font-size: 26px;
 }
 .container{
 
