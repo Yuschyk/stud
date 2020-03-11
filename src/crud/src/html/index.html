@@ -1,66 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="main.css">
-    <title>Person List</title>
-    <meta name="keywords" content="Crud, create, read, update, delete">
-    <meta name="description" content="Crud database">
+    <title>Crud Database</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta name="keywords" content="Crud,database,local store, indexedD">
+    <meta name="description" content="CRUD database with local store and indexedDB">
     <meta http-equiv="content-type"  content="text/html" charset="UTF-8">
     <meta http-equiv="content-language" content="en">
     <meta name="robots" content="index, nofollow">
     <meta name="author" content="Yuschyk">
     <meta name="copyright" content="All rights reserved by Yuschyk Yura">
-    <meta name="viewport" content="width=device-width, initial scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
+
 <body>
+<h1 class="input-workspace__title">CRUD DATABASE</h1>
 
-<div class="work-block">
-    <div class="container">
+<div class="input-container">
+    <div class="workspace">
+        <div class="store-block">
+            <label class="label__radiobutton " id="rBtn__ls">
+                <input checked class="radioBtn" id="radio__localStore" name="s1" type="radio">
+                <span class="fake"></span>
+                <span class="radioBtn__description">Local Store</span>
+            </label>
 
-        <div class="input-row">
-
-            <div class="id input-block">
-
-                <span class="description">ID</span>
-                <input class="input__information" type="text"  id="id" placeholder="Add Id">
-            </div>
-
-            <div class="first__name input-block">
-                <span class="description">First Name</span>
-                <input class="input__information" type="text"  id="firstName" placeholder="Add first name">
-            </div>
-
-            <div class="last__name input-block">
-                <span class="description">Last Name</span>
-                <input class="input__information" type="text"  id="lastName" placeholder="Add last mame">
-            </div>
-
-            <div class="age input-block">
-                <span class="description">Age</span>
-                <input class="input__information" type="text"  id="age" placeholder="Add age">
-            </div>
+            <label class="label__radiobutton" id="rBtn__idb">
+                <input class="radioBtn" id="radio__indDB" name="s1" type="radio">
+                <span class="fake"></span>
+                <span class="radioBtn__description">IndexedDB</span>
+            </label>
         </div>
 
-        <div class="button-row">
-            <input type="button" value="Create" class="buttonAdd" id="buttonAdd">
-            <input type="button" value="Read" class="buttonRead" id="buttonRead">
-            <input type="button" value="Update" class="buttonUpdate" id="buttonUpdate">
-            <input type="button" value="Delete" id="buttonDelete" id= "buttonDelete">
+        <div class="input-block">
+            <div class="input-row">
+
+                <div class="input__description"><span class="span">ID</span>
+                    <input class="input input-id" id="input__id" required type="text">
+                </div>
+
+
+                <div class="input__description"><span class="span">First Name</span>
+                    <input class="input input-firstName" id="input__firstName" required type="text">
+                </div>
+
+
+                <div class="input__description"><span class="span">Last Name</span>
+                    <input class="input input-lastName" id="input__lastName" required type="text">
+                </div>
+
+
+                <div class="input__description"><span class="span">Age</span>
+                    <input class="input input-age" id="input__age" required type="text">
+                </div>
+
+
+                <div class="input__description"><span class="span">Email</span>
+                    <input class="input input-email" id="input__email" required type="email">
+                </div>
+
+
+                <div class="input__description"><span class="span">Phone</span>
+                    <input class="input input-phone" id="input__phone" required type="tel">
+                </div>
+            </div>
+            <div class="button-row">
+                <button class="button create" id="create">Create</button>
+                <button class="button update" id="update">Update</button>
+                <button class="button delete" id="delete">Delete</button>
+            </div>
         </div>
+    </div>
 
+</div>
+
+<div class="table-container">
+    <div class="table-item">
+        <div class="item">ID</div>
+        <div class="item">First Name</div>
+        <div class="item">Last Name</div>
+        <div class="item">Age</div>
+        <div class="item">Email</div>
+        <div class="item">Phone</div>
+    </div>
+
+    <div class="table-item">
+        <div class="item table__id">74</div>
+        <div class="item table__firstName">Yuschyk</div>
+        <div class="item table__lastName">Qwwertt</div>
+        <div class="item table__age">13</div>
+        <div class="item table__email">Groundonline5@gmail.com</div>
+        <div class="item table__phone">380953317761</div>
     </div>
 </div>
-
-<div class="container">
-<div class="table-block">
- 
-
-    </div>
-</div>
-
-
-<script src="script.js"></script>
-</div>
+<script src="js/index.js"></script>
 </body>
 </html>
