@@ -1,8 +1,9 @@
 {
-    "name": "Llist",
+    "name": "l-list",
     "version": "1.0.0",
     "scripts": {
-        "test": "nyc mocha --opts ./mocha.opts"
+        "test": "nyc mocha --opts ./mocha.opts",
+        "lint:js": "eslint --ext .js src"
     },
     "dependencies": {
         "@babel/register": "7.8.3",
@@ -23,8 +24,7 @@
         "eslint-plugin-prettier": "3.1.2",
         "eslint-plugin-react-hooks": "2.3.0",
         "eslint-plugin-jsx-a11y": "6.2.3",
-        "eslint-plugin-react": "7.18.3",
-        "prettier": "1.19.1"
+        "eslint-plugin-react": "7.18.3"
     },
     "nyc": {
         "extension": [
@@ -32,10 +32,10 @@
         ],
         "check-coverage": true,
         "per-file": true,
-        "lines": 50,
-        "statements": 50,
-        "functions": 50,
-        "branches": 50,
+        "lines": 90,
+        "statements": 90,
+        "functions": 90,
+        "branches": 90,
         "reporter": [
             "html",
             "text",
